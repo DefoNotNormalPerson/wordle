@@ -2,6 +2,7 @@ from discord.ext import commands
 import discord
 import datetime
 import asyncio
+import time
 
 time = datetime.datetime.now
 
@@ -13,6 +14,7 @@ async def timer():
     msg_sent = False
 
     while True:
+        time.sleep(0.5)
         if time().hour == 00 and time().minute == 00:
          if not msg_sent:
           with open('words.txt', 'r') as f:
